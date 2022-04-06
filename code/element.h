@@ -213,13 +213,13 @@ private:
 
     static const unsigned int startEye_ = 17;
 
-    static const unsigned int startMed_ = 4;
+    static const unsigned int startMed_ = 5;
 
     void treat_(element *);
 
     void upgrade();
 public:
-    medic(char, unsigned int, unsigned int, unsigned int, char);
+    medic(char, unsigned int, unsigned int);
 
     void doMyBest(element *, element *, unsigned int, unsigned int);
 
@@ -290,7 +290,7 @@ private:
 
     static const unsigned int startEye_ = 25;
 
-    static const unsigned int startDamage_ = 10;
+    static const unsigned int startDamage_ = 30;
 
     void hit_(element *, unsigned int);
 public:
@@ -320,7 +320,7 @@ void crusher::upgrade() {
 void crusher::hit_(element *A, unsigned int protect) {
     if (A == nullptr)
         return;
-    A->getOrGiveHealth(-static_cast<int>(damage_ * (1 - protect / 100.)));
+    A->getOrGiveHealth(-static_cast<int>(damage_ * (1 - protect / 1000.)));
 }
 
 unsigned int crusher::getMyBest() {
@@ -361,9 +361,12 @@ private:
 
     static const unsigned int startEye_ = 20;
 
-    void hit_(element *, unsigned int);
+    void hit_(element *);
+    
+    int protection_;
+
 public:
-    armory(char, unsigned int, unsigned int, char);
+    armory(char, unsigned int, unsigned int);
 
     static unsigned int getStartValue();
 
@@ -373,8 +376,8 @@ public:
 };
 
 armory::armory(char side, unsigned int x, unsigned int y) :
-        element(side, x, y, startHealth_, startEye, startValue_, myType) {
-    protection_ = 0;
+        element(side, x, y, startHealth_, startEye_, startValue_, myType_) {
+        protection_ = 0;
 }
 
 
@@ -383,7 +386,7 @@ unsigned int armory::getStartValue() {
 }
 
 
-void armory::hit_(element *A, unsigned int) {
+void armory::hit_(element * A) {
     if (A == nullptr)
         return;
     if (!A->isFreezely())
@@ -400,7 +403,7 @@ std::pair<element *, element *> armory::findBetterTarget(element *myMax, element
     return std::make_pair(myMax, myMax2);
 };
 
-void armory::doMyBest(element *A, element *, unsigned int, unsigned int) {
+void armory::doMyBest(element * A, element *, unsigned int, unsigned int) {
     hit_(A);
 }
 
