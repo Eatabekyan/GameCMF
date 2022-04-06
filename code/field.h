@@ -32,6 +32,7 @@ public:
 };
 
 
+
 Field::Field(unsigned int x, unsigned int y) {
     coordinateX_ = x;
     coordinateY_ = y;

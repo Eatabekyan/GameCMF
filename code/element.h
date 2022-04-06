@@ -353,6 +353,7 @@ unsigned int crusher::getStartValue() {
 
 class armory :public element {
 private:
+
     static const unsigned int startValue_ = 150;
 
     static const unsigned int startHealth_ = 200;

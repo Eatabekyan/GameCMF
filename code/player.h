@@ -108,4 +108,5 @@ std::vector<std::pair<unsigned int, unsigned int>> *Player::getArmories() {
 };
 
 
+
 #endif //PATTERN_PLAYER_H
