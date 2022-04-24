@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/pattern.dir/main.cpp.o CMakeFiles/pattern.dir/element.cpp.o CMakeFiles/pattern.dir/field.cpp.o CMakeFiles/pattern.dir/player.cpp.o  -o pattern 
