@@ -1,3 +1,0 @@
-/home/eatabekyan/.ssh/GameCMF/code/build/CMakeFiles/edit_cache.dir
-/home/eatabekyan/.ssh/GameCMF/code/build/CMakeFiles/rebuild_cache.dir
-/home/eatabekyan/.ssh/GameCMF/code/build/CMakeFiles/pattern.dir
